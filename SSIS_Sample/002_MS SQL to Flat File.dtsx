@@ -1,0 +1,1326 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/28/2019 6:00:09 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DCSRV"
+  DTS:CreatorName="DCSRV\PICHIT SITTHIKUN"
+  DTS:DTSID="{559DA930-404E-4CB1-B938-117AAE33B2C8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LocaleID="1054"
+  DTS:ObjectName="002_MS SQL to Flat File"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{F736E7F7-16ED-4F57-9CA0-686AE58E45B2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{B15AF6F0-9EFF-4F87-B330-C4E46BDAC055}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\PICHIT SITTHIKUN\Desktop\MS SQL Server 2017 - SSIS Course\Source\Output\001_Employee.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{5BF2FDCA-E742-4C1D-8607-C56DD6E49A53}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1054"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="874"
+          DTS:ConnectionString="C:\Users\PICHIT SITTHIKUN\Desktop\MS SQL Server 2017 - SSIS Course\Source\Output\001_Employee.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{96017B1D-D904-4510-B331-803E35A9827F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="first_name"
+              DTS:DTSID="{5DCA5F63-07B1-4C87-881F-375D96AB2757}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="last_name"
+              DTS:DTSID="{444F6B13-2531-4E97-8ADA-45474E1151AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email"
+              DTS:DTSID="{49F8271E-D933-4F5C-A301-33B655093A1F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="gender"
+              DTS:DTSID="{7FF0649D-16BF-4D6B-8904-EB3849A89D23}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country"
+              DTS:DTSID="{D24B0D2B-ACC2-47BB-8465-9258BFA73E2F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="salary"
+              DTS:DTSID="{7A369F2D-258D-40C4-8028-69BDBF7C5F47}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="phone"
+              DTS:DTSID="{45C7E35F-1D2E-44D1-873D-168F88D7B6F5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="birthdate"
+              DTS:DTSID="{F4A9D0D2-4C44-48B0-B83C-90DCDF28558A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sex"
+              DTS:DTSID="{AB910D81-5DB5-4FC8-B942-0E3294665B28}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.dbSSIS.sa]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{1DD1B71A-B29B-49A5-83F7-A72CB981636D}"
+      DTS:ObjectName="LocalHost.dbSSIS.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;User ID=sa;Initial Catalog=dbSSIS;Persist Security Info=True;Application Name=SSIS-002_MS SQL to Flat File-{1DD1B71A-B29B-49A5-83F7-A72CB981636D}LocalHost.dbSSIS.sa;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjsV50LsJl0KRq4cuKzN1rQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADB1ERZm9clm0nMld0nvlbupCSwHEwWnTYlrnWiv2UyOAAAAAAOgAAAAAIAACAAAABwioTowiR5bIh2O5XFMAp/8iWi7FN6LOT6HFffBJCaGiAAAAAgyLNy6ngUr9UI68j4mhKqlQWCotia1BoVZlGONcAP6kAAAAAZvVTC7HC6o0SYRaBaM9segg4iQyOPrPiuMluNTFKmFK0hZTY0m6qRw8iFKn79vYUHnTZyWcCuGbZENz+KjLTg</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\MS SQL to CSV"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{4359880B-D58D-4BA4-9CA9-C3C63B0CE384}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="MS SQL to CSV"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\MS SQL to CSV\ADO NET Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from employee</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Employee"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\MS SQL to CSV\ADO NET Source.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.dbSSIS.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.dbSSIS.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[id]"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[first_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[first_name]"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[first_name]"
+                      name="first_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[last_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[last_name]"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[last_name]"
+                      name="last_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[email]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[email]"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[email]"
+                      name="email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[gender]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[gender]"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[gender]"
+                      name="gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[country]"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[salary]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[salary]"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[salary]"
+                      name="salary"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[phone]"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[phone]"
+                      name="phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[birthdate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[birthdate]"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[birthdate]"
+                      name="birthdate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[sex]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[sex]"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[sex]"
+                      name="sex"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="50"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[first_name]"
+                      dataType="wstr"
+                      length="50"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[last_name]"
+                      dataType="wstr"
+                      length="50"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[email]"
+                      dataType="wstr"
+                      length="50"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[gender]"
+                      dataType="wstr"
+                      length="50"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[country]"
+                      dataType="wstr"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[salary]"
+                      dataType="wstr"
+                      length="50"
+                      name="salary" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[phone]"
+                      dataType="wstr"
+                      length="50"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[birthdate]"
+                      dataType="wstr"
+                      length="50"
+                      name="birthdate" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[sex]"
+                      dataType="wstr"
+                      length="50"
+                      name="sex" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[id]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[first_name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[first_name]"
+                      name="first_name" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[last_name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[last_name]"
+                      name="last_name" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[email]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[email]"
+                      name="email" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[gender]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[gender]"
+                      name="gender" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[country]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[country]"
+                      name="country" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[salary]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[salary]"
+                      name="salary" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[phone]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[phone]"
+                      name="phone" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[birthdate]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[birthdate]"
+                      name="birthdate" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[sex]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[sex]"
+                      name="sex" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\MS SQL to CSV\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1054"
+              name="Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\MS SQL to CSV\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[first_name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="first_name"
+                      externalMetadataColumnId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[first_name]"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[first_name]" />
+                    <inputColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[last_name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="last_name"
+                      externalMetadataColumnId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[last_name]"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[last_name]" />
+                    <inputColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[email]"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[email]" />
+                    <inputColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[gender]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="gender"
+                      externalMetadataColumnId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[gender]"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[gender]" />
+                    <inputColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[country]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[country]"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[country]" />
+                    <inputColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[salary]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="salary"
+                      externalMetadataColumnId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[salary]"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[salary]" />
+                    <inputColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[phone]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="phone"
+                      externalMetadataColumnId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[phone]"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[phone]" />
+                    <inputColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[birthdate]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="birthdate"
+                      externalMetadataColumnId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[birthdate]"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[birthdate]" />
+                    <inputColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[sex]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="sex"
+                      externalMetadataColumnId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[sex]"
+                      lineageId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output].Columns[sex]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="50"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[first_name]"
+                      dataType="wstr"
+                      length="50"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[last_name]"
+                      dataType="wstr"
+                      length="50"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[email]"
+                      dataType="wstr"
+                      length="50"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[gender]"
+                      dataType="wstr"
+                      length="50"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[country]"
+                      dataType="wstr"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[salary]"
+                      dataType="wstr"
+                      length="50"
+                      name="salary" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[phone]"
+                      dataType="wstr"
+                      length="50"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[birthdate]"
+                      dataType="wstr"
+                      length="50"
+                      name="birthdate" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[sex]"
+                      dataType="wstr"
+                      length="50"
+                      name="sex" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\MS SQL to CSV.Paths[ADO NET Source Output]"
+              endId="Package\MS SQL to CSV\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\MS SQL to CSV\ADO NET Source.Outputs[ADO NET Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\MS SQL to XLS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{476D441D-19BD-4DB0-8A3F-4C2DAB3366E0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="MS SQL to XLS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\MS SQL to XLS\ADO NET Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from employee</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Employee"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\MS SQL to XLS\ADO NET Source.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.dbSSIS.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.dbSSIS.sa]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[id]"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[first_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[first_name]"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[first_name]"
+                      name="first_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[last_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[last_name]"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[last_name]"
+                      name="last_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[email]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[email]"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[email]"
+                      name="email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[gender]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[gender]"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[gender]"
+                      name="gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[country]"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[salary]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[salary]"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[salary]"
+                      name="salary"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[phone]"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[phone]"
+                      name="phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[birthdate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[birthdate]"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[birthdate]"
+                      name="birthdate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[sex]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[sex]"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[sex]"
+                      name="sex"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="50"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[first_name]"
+                      dataType="wstr"
+                      length="50"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[last_name]"
+                      dataType="wstr"
+                      length="50"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[email]"
+                      dataType="wstr"
+                      length="50"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[gender]"
+                      dataType="wstr"
+                      length="50"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[country]"
+                      dataType="wstr"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[salary]"
+                      dataType="wstr"
+                      length="50"
+                      name="salary" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[phone]"
+                      dataType="wstr"
+                      length="50"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[birthdate]"
+                      dataType="wstr"
+                      length="50"
+                      name="birthdate" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[sex]"
+                      dataType="wstr"
+                      length="50"
+                      name="sex" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[id]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[first_name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[first_name]"
+                      name="first_name" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[last_name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[last_name]"
+                      name="last_name" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[email]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[email]"
+                      name="email" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[gender]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[gender]"
+                      name="gender" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[country]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[country]"
+                      name="country" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[salary]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[salary]"
+                      name="salary" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[phone]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[phone]"
+                      name="phone" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[birthdate]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[birthdate]"
+                      name="birthdate" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[sex]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[sex]"
+                      name="sex" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\MS SQL to XLS\Excel Destination"
+              componentClassID="Microsoft.ExcelDestination"
+              contactInfo="Excel Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Excel Destination"
+              name="Excel Destination"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Employee</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\MS SQL to XLS\Excel Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Excel Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].Columns[id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[id]"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].Columns[first_name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="first_name"
+                      externalMetadataColumnId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[first_name]"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[first_name]" />
+                    <inputColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].Columns[last_name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="last_name"
+                      externalMetadataColumnId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[last_name]"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[last_name]" />
+                    <inputColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[email]"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[email]" />
+                    <inputColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].Columns[gender]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="gender"
+                      externalMetadataColumnId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[gender]"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[gender]" />
+                    <inputColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].Columns[country]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[country]"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[country]" />
+                    <inputColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].Columns[salary]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="salary"
+                      externalMetadataColumnId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[salary]"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[salary]" />
+                    <inputColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].Columns[phone]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="phone"
+                      externalMetadataColumnId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[phone]"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[phone]" />
+                    <inputColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].Columns[birthdate]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="birthdate"
+                      externalMetadataColumnId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[birthdate]"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[birthdate]" />
+                    <inputColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].Columns[sex]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="sex"
+                      externalMetadataColumnId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[sex]"
+                      lineageId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output].Columns[sex]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[id]"
+                      dataType="nText"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[first_name]"
+                      dataType="nText"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[last_name]"
+                      dataType="nText"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[email]"
+                      dataType="nText"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[gender]"
+                      dataType="nText"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[country]"
+                      dataType="nText"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[salary]"
+                      dataType="nText"
+                      name="salary" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[phone]"
+                      dataType="nText"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[birthdate]"
+                      dataType="nText"
+                      name="birthdate" />
+                    <externalMetadataColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[sex]"
+                      dataType="nText"
+                      name="sex" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\MS SQL to XLS\Excel Destination.Outputs[Excel Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Excel Destination Error Output"
+                  synchronousInputId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\MS SQL to XLS\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\MS SQL to XLS\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\MS SQL to XLS\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\MS SQL to XLS.Paths[ADO NET Source Output]"
+              endId="Package\MS SQL to XLS\Excel Destination.Inputs[Excel Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\MS SQL to XLS\ADO NET Source.Outputs[ADO NET Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{7322A2AD-DF72-43A4-88BF-B04A82BB268E}"
+      DTS:From="Package\MS SQL to CSV"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\MS SQL to XLS" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\MS SQL to CSV"
+          TopLeft="277.333322313097,55.4666671074761" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\MS SQL to XLS"
+          TopLeft="274.666655752394,149.440000380198" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="351.999989032746,97.0666671074762">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.3733332727221"
+              Start="0,0"
+              End="0,44.8733332727221">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.8733332727221" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\MS SQL to CSV">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\MS SQL to CSV\ADO NET Source"
+          TopLeft="319.333320644167,55.4666671074761" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\MS SQL to CSV\Flat File Destination"
+          TopLeft="349.99998609225,162.933334628211" />
+        <EdgeLayout
+          Id="Package\MS SQL to CSV.Paths[ADO NET Source Output]"
+          TopLeft="399.333320644167,97.0666671074762">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="35.8666654480828,65.866667520735"
+              Start="0,0"
+              End="35.8666654480828,58.366667520735">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.9333337603675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.9333337603675"
+                    Point2="0,32.9333337603675"
+                    Point3="4,32.9333337603675" />
+                  <mssgle:LineSegment
+                    End="31.8666654480828,32.9333337603675" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.8666654480828,32.9333337603675"
+                    Point2="35.8666654480828,32.9333337603675"
+                    Point3="35.8666654480828,36.9333337603675" />
+                  <mssgle:LineSegment
+                    End="35.8666654480828,58.366667520735" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\MS SQL to CSV\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\MS SQL to XLS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\MS SQL to XLS\ADO NET Source"
+          TopLeft="319.333320644167,55.4666671074761" />
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\MS SQL to XLS\Excel Destination"
+          TopLeft="351.2,196" />
+        <EdgeLayout
+          Id="Package\MS SQL to XLS.Paths[ADO NET Source Output]"
+          TopLeft="399.333320644167,97.0666671074761">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31.4666793558331,98.9333328925239"
+              Start="0,0"
+              End="31.4666793558331,91.4333328925239">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.466666446262" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.466666446262"
+                    Point2="0,49.466666446262"
+                    Point3="4,49.466666446262" />
+                  <mssgle:LineSegment
+                    End="27.4666793558331,49.466666446262" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.4666793558331,49.466666446262"
+                    Point2="31.4666793558331,49.466666446262"
+                    Point3="31.4666793558331,53.466666446262" />
+                  <mssgle:LineSegment
+                    End="31.4666793558331,91.4333328925239" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\MS SQL to XLS\Excel Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
