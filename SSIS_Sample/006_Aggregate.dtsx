@@ -1,0 +1,980 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/30/2019 12:59:55 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DCSRV"
+  DTS:CreatorName="DCSRV\PICHIT SITTHIKUN"
+  DTS:DTSID="{BBC69321-4CDC-4B95-A69F-7343F5EED74C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LocaleID="1054"
+  DTS:ObjectName="006_Aggregate"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{800B246A-8E0B-468C-AB13-BFA367FF093A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.dbSSIS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{69025962-4239-4A28-8D9D-69C949AE866B}"
+      DTS:ObjectName="LocalHost.dbSSIS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=dbSSIS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SQL Aggregate"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1CD06411-B9F8-4659-B374-D9D4A37F95DA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Aggregate"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\SQL Aggregate\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[EmpAggregate_1]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">874</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SQL Aggregate\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.dbSSIS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.dbSSIS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SQL Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SQL Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\SQL Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      lineageId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Output].Columns[country]" />
+                    <inputColumn
+                      refId="Package\SQL Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[salary]"
+                      cachedDataType="cy"
+                      cachedName="salary"
+                      externalMetadataColumnId="Package\SQL Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[salary]"
+                      lineageId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Output].Columns[salary]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SQL Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\SQL Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[salary]"
+                      dataType="cy"
+                      name="salary" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SQL Aggregate\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\SQL Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SQL Aggregate\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SQL Aggregate\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SQL Aggregate\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SQL Aggregate\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SQL Aggregate\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct(country),sum(salary) as salary from Employee_2 group by country</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">874</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SQL Aggregate\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.dbSSIS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.dbSSIS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Output].Columns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      length="50"
+                      lineageId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Output].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Output].Columns[salary]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[salary]"
+                      lineageId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Output].Columns[salary]"
+                      name="salary"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[salary]"
+                      dataType="cy"
+                      name="salary" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[country]"
+                      name="country" />
+                    <outputColumn
+                      refId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[salary]"
+                      dataType="cy"
+                      lineageId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[salary]"
+                      name="salary" />
+                    <outputColumn
+                      refId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\SQL Aggregate.Paths[OLE DB Source Output]"
+              endId="Package\SQL Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\SQL Aggregate\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SSIS Aggregate"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{7DC53728-4719-4014-A43B-C4560527CCE2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SSIS Aggregate"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\SSIS Aggregate\Aggregate"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Aggregate"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\SSIS Aggregate\Aggregate.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SSIS Aggregate\Aggregate.Inputs[Aggregate Input 1].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      lineageId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].Columns[country]" />
+                    <inputColumn
+                      refId="Package\SSIS Aggregate\Aggregate.Inputs[Aggregate Input 1].Columns[salary]"
+                      cachedDataType="cy"
+                      cachedName="salary"
+                      lineageId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].Columns[salary]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SSIS Aggregate\Aggregate.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSIS Aggregate\Aggregate.Outputs[Aggregate Output 1].Columns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\SSIS Aggregate\Aggregate.Outputs[Aggregate Output 1].Columns[country]"
+                      name="country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].Columns[country]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SSIS Aggregate\Aggregate.Outputs[Aggregate Output 1].Columns[salary]"
+                      dataType="cy"
+                      lineageId="Package\SSIS Aggregate\Aggregate.Outputs[Aggregate Output 1].Columns[salary]"
+                      name="salary">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].Columns[salary]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SSIS Aggregate\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[EmpAggregate_2]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">874</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SSIS Aggregate\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.dbSSIS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.dbSSIS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SSIS Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SSIS Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\SSIS Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      lineageId="Package\SSIS Aggregate\Aggregate.Outputs[Aggregate Output 1].Columns[country]" />
+                    <inputColumn
+                      refId="Package\SSIS Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[salary]"
+                      cachedDataType="cy"
+                      cachedName="salary"
+                      externalMetadataColumnId="Package\SSIS Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[salary]"
+                      lineageId="Package\SSIS Aggregate\Aggregate.Outputs[Aggregate Output 1].Columns[salary]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SSIS Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[salary]"
+                      dataType="cy"
+                      name="salary" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SSIS Aggregate\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\SSIS Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSIS Aggregate\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SSIS Aggregate\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SSIS Aggregate\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SSIS Aggregate\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SSIS Aggregate\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Employee_2]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">874</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SSIS Aggregate\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.dbSSIS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.dbSSIS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].Columns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      length="50"
+                      lineageId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].Columns[salary]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[salary]"
+                      lineageId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].Columns[salary]"
+                      name="salary"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      dataType="i8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[salary]"
+                      dataType="cy"
+                      name="salary" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[birthdate]"
+                      dataType="dbTimeStamp"
+                      name="birthdate" />
+                    <externalMetadataColumn
+                      refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sex]"
+                      dataType="bool"
+                      name="sex" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[country]"
+                      name="country" />
+                    <outputColumn
+                      refId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[salary]"
+                      dataType="cy"
+                      lineageId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[salary]"
+                      name="salary" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\SSIS Aggregate.Paths[Aggregate Output 1]"
+              endId="Package\SSIS Aggregate\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\SSIS Aggregate\Aggregate.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\SSIS Aggregate.Paths[OLE DB Source Output]"
+              endId="Package\SSIS Aggregate\Aggregate.Inputs[Aggregate Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\SSIS Aggregate\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\SQL Aggregate"
+          TopLeft="175.999993006389,56.1600004463196" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\SSIS Aggregate"
+          TopLeft="211.333324935701,128.266667686039" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SQL Aggregate">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\SQL Aggregate\OLE DB Destination"
+          TopLeft="261.33332294888,170.560001355489" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\SQL Aggregate\OLE DB Source"
+          TopLeft="257.999989748002,45.0666670248244" />
+        <EdgeLayout
+          Id="Package\SQL Aggregate.Paths[OLE DB Source Output]"
+          TopLeft="333.999989748002,86.6666670248244">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.9333332008786,83.8933343306648"
+              Start="0,0"
+              End="12.9333332008786,76.3933343306648">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.9466671653324" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.9466671653324"
+                    Point2="0,41.9466671653324"
+                    Point3="4,41.9466671653324" />
+                  <mssgle:LineSegment
+                    End="8.93333320087862,41.9466671653324" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.93333320087862,41.9466671653324"
+                    Point2="12.9333332008786,41.9466671653324"
+                    Point3="12.9333332008786,45.9466671653324" />
+                  <mssgle:LineSegment
+                    End="12.9333332008786,76.3933343306648" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SQL Aggregate\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SQL Aggregate\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\SSIS Aggregate">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\SSIS Aggregate\OLE DB Source"
+          TopLeft="281.6,56" />
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\SSIS Aggregate\Aggregate"
+          TopLeft="311.2,135.2" />
+        <EdgeLayout
+          Id="Package\SSIS Aggregate.Paths[OLE DB Source Output]"
+          TopLeft="357.6,97.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16.8,37.6"
+              Start="0,0"
+              End="16.8,30.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.8"
+                    Point2="0,18.8"
+                    Point3="4,18.8" />
+                  <mssgle:LineSegment
+                    End="12.8,18.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.8,18.8"
+                    Point2="16.8,18.8"
+                    Point3="16.8,22.8" />
+                  <mssgle:LineSegment
+                    End="16.8,30.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\SSIS Aggregate\OLE DB Destination"
+          TopLeft="297.6,234.4" />
+        <EdgeLayout
+          Id="Package\SSIS Aggregate.Paths[Aggregate Output 1]"
+          TopLeft="374.4,176.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.7999999999999,57.6"
+              Start="0,0"
+              End="8.7999999999999,50.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.8"
+                    Point2="0,28.8"
+                    Point3="4,28.8" />
+                  <mssgle:LineSegment
+                    End="4.7999999999999,28.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.7999999999999,28.8"
+                    Point2="8.7999999999999,28.8"
+                    Point3="8.7999999999999,32.8" />
+                  <mssgle:LineSegment
+                    End="8.7999999999999,50.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SSIS Aggregate\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SSIS Aggregate\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
