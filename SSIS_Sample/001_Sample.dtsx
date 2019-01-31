@@ -11,8 +11,8 @@
   DTS:LocaleID="1054"
   DTS:ObjectName="001_Sample"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{0E55D156-BE46-4326-A0C3-9F3537B1B4CF}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{DA3032CC-6B54-4AB1-93EE-E800826BC200}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -127,6 +127,16 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.dbSSIS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{213E9F23-163B-4B40-BAB2-71D2645D5A59}"
+      DTS:ObjectName="LocalHost.dbSSIS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=dbSSIS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.dbSSIS.sa]"
       DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
       DTS:DTSID="{C7C57D28-22B7-4843-B787-FA0D19C80592}"
@@ -137,7 +147,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjsV50LsJl0KRq4cuKzN1rQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA67WdFhhtVL9lsCIxUDHr5GESTtZqICTzwfZDDhO7nwAAAAAAOgAAAAAIAACAAAADgVcN6QvxYntV9lrw/OZV7hLAE4q6fot4RCduFbSqBBiAAAADB5Vq28f2I60EfSILtVaqFB2MHUCNEdmuL4ktMgDGH00AAAAB5RPmCq55nEE/tTIwRSN0liBikO/2Roi5nV88VVn3XqEuKPZsGKQqWkxpA4YOKI0IsIq2k/y2V4A6b3DDAFJN1</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjsV50LsJl0KRq4cuKzN1rQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAhgP4K9XpxvFrWew4Osz2Zk4Z5agDWFtm9iO/tgE+xDwAAAAAOgAAAAAIAACAAAACcXAyKW1WBW0i/+Z4VIu7uyfKiSKoiou4gNj3hpWJHdyAAAABaagTxT3OFlWcF0EXwlrBj4kx9rI+t0u6ZeckVVj0Y1kAAAABLds6qlt8mGPY+A1+iPUTyOO1VWWexvPEJE5Q/a2pW8Kio8kJtKW796nQnw7qM/GIbc95YJan89XSLPEFvyIsd</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -292,47 +302,47 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[id]"
-                      dataType="i8"
+                      dataType="i4"
                       name="id" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[first_name]"
                       dataType="wstr"
-                      length="50"
+                      length="255"
                       name="first_name" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[last_name]"
                       dataType="wstr"
-                      length="50"
+                      length="255"
                       name="last_name" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[email]"
                       dataType="wstr"
-                      length="50"
+                      length="255"
                       name="email" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[gender]"
                       dataType="wstr"
-                      length="50"
+                      length="255"
                       name="gender" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[country]"
                       dataType="wstr"
-                      length="50"
+                      length="255"
                       name="country" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[salary]"
-                      dataType="numeric"
-                      name="salary"
-                      precision="19"
-                      scale="255" />
+                      dataType="wstr"
+                      length="255"
+                      name="salary" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[phone]"
                       dataType="wstr"
-                      length="50"
+                      length="255"
                       name="phone" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[birthdate]"
-                      dataType="dbTimeStamp"
+                      dataType="wstr"
+                      length="255"
                       name="birthdate" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[sex]"
@@ -722,7 +732,33 @@
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BCD44085-49CB-4F81-A3C0-D6C936FEA5ED}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{213E9F23-163B-4B40-BAB2-71D2645D5A59}"
+          SQLTask:SqlStatementSource="delete from employee_3" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{160012AA-E084-4574-A601-CE92D195EBAD}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -734,11 +770,37 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task"
-          TopLeft="253.999989906948,67.9466672066583" />
+          TopLeft="285.999988635382,132.426667719099" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="276.666655672922,41.6000003306071" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="360.133322154152,83.2000003306071">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.2266673884922"
+              Start="0,0"
+              End="0,41.7266673884922">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.7266673884922" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -748,13 +810,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="179.2,41.6"
-          Id="Package\Data Flow Task\ADO NET Destination"
-          TopLeft="328.666653606627,160.853334611681" />
-        <NodeLayout
           Size="151.2,41.6"
           Id="Package\Data Flow Task\Flat File Source"
           TopLeft="337.999986569087,47.1466670413547" />
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Data Flow Task\ADO NET Destination"
+          TopLeft="328.666653606627,160.853334611681" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output]"
           TopLeft="415.933320087857,88.7466670413547">

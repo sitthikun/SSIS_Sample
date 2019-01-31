@@ -12,7 +12,7 @@
   DTS:ObjectName="002_MS SQL to Flat File"
   DTS:PackageType="5"
   DTS:VersionBuild="4"
-  DTS:VersionGUID="{F736E7F7-16ED-4F57-9CA0-686AE58E45B2}">
+  DTS:VersionGUID="{AE1B5EF8-FAB3-4F18-B01C-9D1B6F1EB65E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -146,7 +146,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjsV50LsJl0KRq4cuKzN1rQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADB1ERZm9clm0nMld0nvlbupCSwHEwWnTYlrnWiv2UyOAAAAAAOgAAAAAIAACAAAABwioTowiR5bIh2O5XFMAp/8iWi7FN6LOT6HFffBJCaGiAAAAAgyLNy6ngUr9UI68j4mhKqlQWCotia1BoVZlGONcAP6kAAAAAZvVTC7HC6o0SYRaBaM9segg4iQyOPrPiuMluNTFKmFK0hZTY0m6qRw8iFKn79vYUHnTZyWcCuGbZENz+KjLTg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjsV50LsJl0KRq4cuKzN1rQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABHkH7p2maWBxufXWqmp2cSMRwYEP8FpkXQiqWx4K+rMQAAAAAOgAAAAAIAACAAAAAgDUGE5rPPVnVdGzc07fRRR/D4uRSXZ5E66S4GHVNZMyAAAACbaArE1lugTI9GAEfJYDeseCENkBYAfc5FipPZeWidrEAAAADidVc24n+THkj743ntRguZ7eY0Oh7jjysCY+wT87d57Bu6VdEL55KC37tVqS9q+BoNrQjhOfLluLWnsnYgmBvP</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>

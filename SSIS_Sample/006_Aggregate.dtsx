@@ -11,8 +11,8 @@
   DTS:LocaleID="1054"
   DTS:ObjectName="006_Aggregate"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{800B246A-8E0B-468C-AB13-BFA367FF093A}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{4A8ABF61-4E1D-4A9A-BE82-33A78A9F15D2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,6 +29,38 @@
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Delete table EmpAggregate_1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5406BBA6-2499-46A2-A9B1-D7D62095068C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete table EmpAggregate_1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{69025962-4239-4A28-8D9D-69C949AE866B}"
+          SQLTask:SqlStatementSource="delete from empaggregate_1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete table EmpAggregate_2"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0d4cda74-fb37-4aa6-b8ed-83a7b2b521b9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete table EmpAggregate_2"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{69025962-4239-4A28-8D9D-69C949AE866B}"
+          SQLTask:SqlStatementSource="delete from empaggregate_2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\SQL Aggregate"
       DTS:CreationName="Microsoft.Pipeline"
@@ -768,6 +800,24 @@
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{34FD1094-9C7A-498C-8837-07DD7E43D58D}"
+      DTS:From="Package\Delete table EmpAggregate_1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\SQL Aggregate" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{2EE11CDE-AC4B-4245-8219-8DD709F107C3}"
+      DTS:From="Package\Delete table EmpAggregate_2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SSIS Aggregate" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -779,15 +829,91 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="217.6,41.6"
+          Id="Package\Delete table EmpAggregate_1"
+          TopLeft="166.666660043929,39.5200003140768" />
+        <NodeLayout
+          Size="217.6,41.6"
+          Id="Package\Delete table EmpAggregate_2"
+          TopLeft="382.66665146086,136.266666942173" />
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\SQL Aggregate"
-          TopLeft="175.999993006389,56.1600004463196" />
+          TopLeft="172.66665980551,119.946667619917" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\SSIS Aggregate"
-          TopLeft="211.333324935701,128.266667686039" />
+          TopLeft="333.999986728033,237.120001884461" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="275.466660043929,81.1200003140767">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-28.0000002384186,38.8266673058404"
+              Start="0,0"
+              End="-28.0000002384186,31.3266673058404">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.4133336529202" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.4133336529202"
+                    Point2="0,19.4133336529202"
+                    Point3="-4,19.4133336529202" />
+                  <mssgle:LineSegment
+                    End="-24.0000002384186,19.4133336529202" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24.0000002384186,19.4133336529202"
+                    Point2="-28.0000002384186,19.4133336529202"
+                    Point3="-28.0000002384186,23.4133336529202" />
+                  <mssgle:LineSegment
+                    End="-28.0000002384186,31.3266673058404" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="491.46665146086,177.866666942173">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-81.0666647328273,59.2533349422879"
+              Start="0,0"
+              End="-81.0666647328273,51.7533349422879">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.6266674711439" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.6266674711439"
+                    Point2="0,29.6266674711439"
+                    Point3="-4,29.6266674711439" />
+                  <mssgle:LineSegment
+                    End="-77.0666647328273,29.6266674711439" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-77.0666647328273,29.6266674711439"
+                    Point2="-81.0666647328273,29.6266674711439"
+                    Point3="-81.0666647328273,33.6266674711439" />
+                  <mssgle:LineSegment
+                    End="-81.0666647328273,51.7533349422879" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -868,13 +994,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="152,41.6"
-          Id="Package\SSIS Aggregate\OLE DB Source"
-          TopLeft="281.6,56" />
+          Size="171.2,41.6"
+          Id="Package\SSIS Aggregate\OLE DB Destination"
+          TopLeft="297.6,234.4" />
         <NodeLayout
           Size="126.4,41.6"
           Id="Package\SSIS Aggregate\Aggregate"
           TopLeft="311.2,135.2" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\SSIS Aggregate\OLE DB Source"
+          TopLeft="281.6,56" />
         <EdgeLayout
           Id="Package\SSIS Aggregate.Paths[OLE DB Source Output]"
           TopLeft="357.6,97.6">
@@ -909,10 +1039,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\SSIS Aggregate\OLE DB Destination"
-          TopLeft="297.6,234.4" />
         <EdgeLayout
           Id="Package\SSIS Aggregate.Paths[Aggregate Output 1]"
           TopLeft="374.4,176.8">
@@ -951,7 +1077,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\SSIS Aggregate\OLE DB Source">
+    design-time-name="Package\SSIS Aggregate\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -964,7 +1090,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\SSIS Aggregate\OLE DB Destination">
+    design-time-name="Package\SSIS Aggregate\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

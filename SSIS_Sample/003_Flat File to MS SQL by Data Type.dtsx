@@ -11,8 +11,8 @@
   DTS:LocaleID="1054"
   DTS:ObjectName="003_Flat File to MS SQL by Data Type"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{C539B824-8C95-4988-98E9-D4AD7ED4DAF7}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{6CCBD916-A1E2-421D-ADDA-6A6719E6A455}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,7 +38,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="id"
-              DTS:DTSID="{1F7E9F90-A11F-4C7D-84F3-2598922DBC84}"
+              DTS:DTSID="{B1266812-31C2-4751-B326-57668A6F6301}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="first_name"
-              DTS:DTSID="{DE531449-ED30-42FF-8AFE-51212904DE6B}"
+              DTS:DTSID="{8336EB08-CD6F-435E-A006-15F62E1C0E9B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="last_name"
-              DTS:DTSID="{CF18935C-9020-4025-BACC-8E7EA8B732E9}"
+              DTS:DTSID="{FA6E35CC-C8B5-4EA4-8F69-23EA62188D64}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="email"
-              DTS:DTSID="{90BFAD8D-41FC-466E-B85F-C50C0E00A819}"
+              DTS:DTSID="{3C7779D9-44C3-4E46-844A-F7D64BD7CE6D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -74,7 +74,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gender"
-              DTS:DTSID="{2757BF98-DE5A-4FCD-BAF8-11D3BE14AB5E}"
+              DTS:DTSID="{4E69D60B-C1E7-44F0-8DA9-FC91ABD150E4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -83,7 +83,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="country"
-              DTS:DTSID="{CCC5C37D-E266-46D3-A84A-856CCA3BC596}"
+              DTS:DTSID="{25A660A3-60B3-4668-80E1-7C6BC93DBE9D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -92,7 +92,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="salary"
-              DTS:DTSID="{2602E5CD-99A1-4E5A-809D-A9E6AC60173C}"
+              DTS:DTSID="{AC8D1635-A614-412B-AC2F-4A23036B4AA1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -101,7 +101,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="phone"
-              DTS:DTSID="{081F7868-60F9-4D14-833A-F3BE0456E1A2}"
+              DTS:DTSID="{EEECDB01-BF6A-4F1B-BEA4-AC66B7000843}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -110,7 +110,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="birthdate"
-              DTS:DTSID="{3BF3A7F3-D08B-4E42-AD2B-5BCD52787995}"
+              DTS:DTSID="{D04E8085-D895-4C92-B24A-92296D74BE2A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -118,7 +118,7 @@
               DTS:DataType="11"
               DTS:TextQualified="True"
               DTS:ObjectName="sex"
-              DTS:DTSID="{9D2989FD-DAEE-428A-B4E1-98833C58CF6A}"
+              DTS:DTSID="{ED3A5161-1311-4941-8498-827E4B8786B5}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -135,7 +135,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjsV50LsJl0KRq4cuKzN1rQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABygUW8zY9HrrPIedVKkFKKYc2vltgejDX860Xj2MZOEgAAAAAOgAAAAAIAACAAAACC8b98cAPvvQbpJcS9F8QzzIVVGXiA9m0Dvy1M4IIt3CAAAACYXbL+ReWa2POI+Ow8TocX7N6XrQoW6CpJn0d39NY6bkAAAADM9OvGMSZo4mSIlycmcApCNC+6UpXWKUYSNOhu/uRMfihY0LlOw/6W0rahSJZVqA/Zmef/dMLrtU8Z6yxkSr3W</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjsV50LsJl0KRq4cuKzN1rQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAR1zlxmyvDcW+YT17GTlVg1Bl/tUZOudtQ1FYIgGgglgAAAAAOgAAAAAIAACAAAADrEdgA527C+3I56VuPVASVIoAndI5cPnhF7vXEzYfY1CAAAACpM1AdWHG2tWMkoJCgIUkczOa7F6AHD+tUpAB/Cx/3wkAAAAAaogbajJNdv+tpY3LpeNm8zoA2TRLMPdGYZj8ciDMhRnbvFTT+uVzFBS67eH+MIU9BsypKvwTTTbivMXcF4F4a</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1039,7 +1039,7 @@
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="156,41.6"
           Id="Package\Data Flow Task\Data Conversion"
@@ -1079,7 +1079,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,7.3166669834986,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
